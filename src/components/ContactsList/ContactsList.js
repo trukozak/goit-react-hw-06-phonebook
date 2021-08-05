@@ -33,6 +33,8 @@ const mapStateToProps = state => ({
   filter: state.filter,
 });
 
-export default connect(mapStateToProps, { onDeleteContact: deleteContact })(
-  ContactsList,
-);
+const mapDispatchToProps = {
+  onDeleteContact: deleteContact,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactsList);
